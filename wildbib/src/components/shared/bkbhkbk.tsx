@@ -7,7 +7,8 @@ interface Props{
 export const TsBlock: React.FC<Props> = ({ ClassName }) => {
     return (
         <div className={ ClassName}>
-            <div>
+            <div>wwt
+                dsfffffffffffffffff
                 afwdfwdfwerwwwwwwwwwwwwwwwwwwwwwwwwwwws
             </div>
         </div>);
