@@ -1,5 +1,6 @@
 'use client';
-import React, {useEffect} from "react";
+
+import React, {useEffect,useMemo} from "react";
 import style from '../../app/css/Card.module.scss'
 import items from '../../store/ItemsStore'
 import filter from '../../store/FilterStore'
@@ -13,18 +14,27 @@ export const Cards: React.FC<Props> = observer(({}) => {
     useEffect(() => {
         items.fetchGetItems()
     }, []);
-    let values = filter.filter.changeValue
-    let slider = filter.filter.changeValueSlider
+
+    const { values, slider } = useMemo(() => ({
+        values: filter.filter.changeValue,
+        slider: filter.filter.changeValueSlider
+    }), [filter.filter.changeValue, filter.filter.changeValueSlider]);
+
+    const filteredItems = useMemo(() =>
+            items.getFinalItems(values, slider),
+        [items.getFinalItems(values, slider), values, slider]
+    );
 
     return (
 
             <div className={ style.CardsContainer}>
-                {Number(items.getFinalItems(values,slider).length) !== 0 ? items.getFinalItems(values,slider).map((el:any)=>(
+                {filteredItems.length > 0 ? filteredItems.map((el:any)=>(
                     <Link key={el.id} href={{
                         pathname: '/item',
                         query: {
                             id: el.id
-                        }
+                        },
+
                     }}>
                         <div  className={style.Card}>
                             <div className="">{el.name}</div>
