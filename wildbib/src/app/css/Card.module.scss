@@ -1,0 +1,17 @@
+.CardsContainer{
+  width: 79%;
+  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  .Card{
+    border-radius: 10px;
+    background-color: #191919;
+    padding: 7px;
+    width: 244px;
+    height: 120px;
+  }
+  .Card:hover{
+    transition: 600ms;
+    background-color: oklch(0.637 0.237 25.331);
+  }
+}

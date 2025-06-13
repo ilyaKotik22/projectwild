@@ -1,0 +1,28 @@
+.basketList {
+  display: flex;
+  background-color: #191919;
+  flex-wrap: wrap;
+  width: 60%;
+  padding: 15px 25px;
+  border-radius: 10px;
+}
+.basketList .basketList__basketCard {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.basketList .basketList__basketCard .basketList__cost {
+  gap: 10px;
+  display: flex;
+}
+
+.finalCost {
+  padding: 5px 15px;
+  border-radius: 10px;
+  margin-left: 10px;
+  width: 30%;
+  background-color: #191919;
+}
+
+/*# sourceMappingURL=Basket.module.css.map */
