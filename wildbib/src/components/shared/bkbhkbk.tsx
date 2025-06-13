@@ -8,7 +8,7 @@ export const TsBlock: React.FC<Props> = ({ ClassName }) => {
     return (
         <div className={ ClassName}>
             <div>
-                afwdfwdfws
+                afwdfwdfwerwwwwwwwwwwwwwwwwwwwwwwwwwwws
             </div>
         </div>);
 };
